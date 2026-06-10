@@ -56,6 +56,8 @@ git commit -m "Add Delega task mirror"
 
 Then add `DELEGA_API_KEY` as a GitHub Actions secret. Use an agent key with
 permission to read and mutate the tasks you want CI to sync.
+For PR close automation, configure the Delega GitHub webhook for `push` and
+`pull_request` events with the same repository.
 
 ## Merge Flow
 
