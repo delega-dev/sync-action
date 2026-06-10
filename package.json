@@ -1,0 +1,10 @@
+{
+  "name": "delega-sync-action",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GitHub Action for running delega sync in CI",
+  "scripts": {
+    "test": "node test/action.test.mjs"
+  },
+  "license": "MIT"
+}
