@@ -8,6 +8,7 @@ for (const snippet of [
   "using: composite",
   "api-key:",
   "DELEGA_API_KEY: ${{ inputs.api-key }}",
+  "default: 1.5.0",
   "npx --yes \"@delega-dev/cli@${DELEGA_CLI_VERSION}\"",
   "pull|push|status",
 ]) {
@@ -19,6 +20,8 @@ for (const snippet of [
   "delega sync init --repo owner/name",
   "Closes-Delega: #<task-id>",
   "explicit conflict",
+  "The default `cli-version` is pinned",
+  "Updating the CLI",
 ]) {
   assert.ok(readme.includes(snippet), `README should include ${snippet}`);
 }

@@ -39,7 +39,7 @@ jobs:
 | `api-url` | `https://api.delega.dev` | Delega API base URL. |
 | `command` | `push` | Sync command to run: `pull`, `push`, or `status`. |
 | `working-directory` | `.` | Directory containing `.delega/config.json`. |
-| `cli-version` | `latest` | Version of `@delega-dev/cli` to run. Pin this for reproducible CI. |
+| `cli-version` | `1.5.0` | Version of `@delega-dev/cli` to run. Override deliberately after testing a newer CLI release. |
 | `no-auto-link` | `false` | Set to `true` to disable branch/HEAD auto-linking on `push`. |
 | `json` | `false` | Set to `true` to pass `--json` to the CLI. |
 
@@ -74,4 +74,11 @@ For PR close automation, configure the Delega GitHub webhook for `push` and
 - Prefer a dedicated Delega agent key for CI.
 - Keep `permissions: contents: read` unless your workflow has a separate reason
   to write to the repository.
-- Pin `cli-version` when you want fully reproducible CI behavior.
+- The default `cli-version` is pinned, not `latest`, so CI does not run newly
+  published npm code with `DELEGA_API_KEY` without an explicit action update.
+
+## Updating the CLI
+
+When releasing a new compatible `@delega-dev/cli`, test this action against that
+version, update the `cli-version` default in `action.yml`, update the input table
+above, and cut a new action tag.
