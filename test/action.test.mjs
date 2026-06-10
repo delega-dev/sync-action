@@ -8,7 +8,7 @@ for (const snippet of [
   "using: composite",
   "api-key:",
   "DELEGA_API_KEY: ${{ inputs.api-key }}",
-  "default: 1.5.0",
+  "default: 1.5.1",
   "npx --yes \"@delega-dev/cli@${DELEGA_CLI_VERSION}\"",
   "pull|push|status",
 ]) {
