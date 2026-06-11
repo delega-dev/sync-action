@@ -8,7 +8,6 @@ for (const snippet of [
   "using: composite",
   "api-key:",
   "DELEGA_API_KEY: ${{ inputs.api-key }}",
-  "default: 1.5.1",
   "npx --yes \"@delega-dev/cli@${DELEGA_CLI_VERSION}\"",
   "pull|push|status",
 ]) {
@@ -26,8 +25,14 @@ for (const snippet of [
   assert.ok(readme.includes(snippet), `README should include ${snippet}`);
 }
 
+// Pin format check (exact version, not a range) without hardcoding the
+// version — the README table assertion below keeps the two in sync.
 const actionCliDefault = action.match(/cli-version:[\s\S]*?default:\s*([^\s]+)/)?.[1];
-assert.equal(actionCliDefault, "1.5.1", "action.yml should pin cli-version to 1.5.1");
+assert.match(
+  actionCliDefault ?? "",
+  /^\d+\.\d+\.\d+$/,
+  "action.yml should pin cli-version to an exact semver version",
+);
 assert.ok(
   readme.includes(`| \`cli-version\` | \`${actionCliDefault}\` |`),
   "README cli-version table default should match action.yml",
