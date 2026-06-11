@@ -26,4 +26,11 @@ for (const snippet of [
   assert.ok(readme.includes(snippet), `README should include ${snippet}`);
 }
 
+const actionCliDefault = action.match(/cli-version:[\s\S]*?default:\s*([^\s]+)/)?.[1];
+assert.equal(actionCliDefault, "1.5.1", "action.yml should pin cli-version to 1.5.1");
+assert.ok(
+  readme.includes(`| \`cli-version\` | \`${actionCliDefault}\` |`),
+  "README cli-version table default should match action.yml",
+);
+
 console.log("action metadata checks passed");

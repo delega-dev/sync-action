@@ -39,7 +39,7 @@ jobs:
 | `api-url` | `https://api.delega.dev` | Delega API base URL. |
 | `command` | `push` | Sync command to run: `pull`, `push`, or `status`. |
 | `working-directory` | `.` | Directory containing `.delega/config.json`. |
-| `cli-version` | `1.5.0` | Version of `@delega-dev/cli` to run. Override deliberately after testing a newer CLI release. |
+| `cli-version` | `1.5.1` | Version of `@delega-dev/cli` to run. Override deliberately after testing a newer CLI release. |
 | `no-auto-link` | `false` | Set to `true` to disable branch/HEAD auto-linking on `push`. |
 | `json` | `false` | Set to `true` to pass `--json` to the CLI. |
 
