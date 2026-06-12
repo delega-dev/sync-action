@@ -21,7 +21,7 @@ inputs:
   cli-version:
     description: Version of @delega-dev/cli to run.
     required: false
-    default: 1.7.1
+    default: 1.8.0
   no-auto-link:
     description: Set to true to disable branch/HEAD auto-linking on sync push.
     required: false
