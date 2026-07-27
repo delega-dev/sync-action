@@ -77,6 +77,17 @@ For PR close automation, configure the Delega GitHub webhook for `push` and
 - The default `cli-version` is pinned, not `latest`, so CI does not run newly
   published npm code with `DELEGA_API_KEY` without an explicit action update.
 
+## Development
+
+Run the action metadata checks locally with:
+
+```bash
+npm test
+```
+
+The test verifies the composite action wiring and keeps the documented
+`cli-version` default in sync with `action.yml`.
+
 ## Updating the CLI
 
 When releasing a new compatible `@delega-dev/cli`, test this action against that
