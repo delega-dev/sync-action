@@ -1,10 +1,10 @@
 name: Delega Sync
-description: Sync repo-local .delega/tasks.jsonl changes to Delega from GitHub Actions.
-author: Delega
+description: Sync repo-local task changes to an existing private Delega deployment.
+author: Ryan McMillan
 
 inputs:
   api-key:
-    description: Delega agent API key. Store as a GitHub Actions secret.
+    description: Existing Delega owner credential. Public hosted onboarding is retired.
     required: true
   api-url:
     description: Delega API base URL.

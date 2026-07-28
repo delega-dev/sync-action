@@ -1,5 +1,7 @@
 # Delega Sync Action
 
+> **Maintenance status:** Delega’s public hosted service retired on July 28, 2026. This action remains public as an engineering artifact and for Ryan McMillan’s existing private deployment. It requires an existing owner credential. See the [case study](https://ryanmcmillan.com/delega).
+
 Sync `.delega/tasks.jsonl` from a repository into hosted Delega during CI.
 
 This action runs `delega sync push` by default. Put it on merges to your main
@@ -36,7 +38,7 @@ jobs:
 | Input | Default | Description |
 |---|---:|---|
 | `api-key` | required | Delega agent API key. Store this as `DELEGA_API_KEY` in repository or organization secrets. |
-| `api-url` | `https://api.delega.dev` | Delega API base URL. |
+| `api-url` | `https://api.delega.dev` | Owner-only Delega API base URL. |
 | `command` | `push` | Sync command to run: `pull`, `push`, or `status`. |
 | `working-directory` | `.` | Directory containing `.delega/config.json`. |
 | `cli-version` | `1.8.0` | Version of `@delega-dev/cli` to run. Override deliberately after testing a newer CLI release. |

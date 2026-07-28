@@ -2,7 +2,7 @@
   "name": "delega-sync-action",
   "version": "1.0.0",
   "private": true,
-  "description": "GitHub Action for running delega sync in CI",
+  "description": "GitHub Action for Ryan McMillan's private Delega task sync",
   "scripts": {
     "test": "node test/action.test.mjs"
   },
